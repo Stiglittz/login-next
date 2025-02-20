@@ -38,6 +38,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem('isAuthenticated');
     // Eliminar cookie
     document.cookie = 'isAuthenticated=false; path=/';
+    window.location.href = '/login';
   };
 
   return (

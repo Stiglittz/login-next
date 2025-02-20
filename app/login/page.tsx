@@ -28,7 +28,7 @@ export default function Login() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      router.push('/projects');
+      router.replace('/projects');
     }
   }, [isAuthenticated, router]);
 
@@ -36,7 +36,7 @@ export default function Login() {
     try {
       const success = await login(data.email, data.password);
       if (success) {
-        router.push('/projects');
+        window.location.href = '/projects';
       } else {
         setError('root', {
           type: 'manual',
